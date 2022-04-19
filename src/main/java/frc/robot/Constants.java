@@ -18,4 +18,6 @@ public final class Constants {
     public static int RIGHT_MOTOR_1_CANID = 2;// first motor that runs drivetrain on the right
     public static int RIGHT_MOTOR_2_CANID = 3;
     public static int GEAR = 2;
+    public static double TURN_AXIS = 0;
+    public static double SPEED_AXIS = 0;
 }

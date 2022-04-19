@@ -33,18 +33,24 @@ public class TeleopCmd extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    double turn = 0;
+    double turns = 0;
     if (joystick.getRawAxis(0) < 0.1 && joystick.getRawAxis(0) > -0.1) {
-      turn = 0;
+      turns = 0;
     } else {
-      turn = joystick.getRawAxis(0);
-      // turn = turn*joystick.getRawAxis(3);
+      turns = joystick.getRawAxis(0);
     }
+    double turn = joystick.getRawAxis(3)*turns*0.65;
+    
+    double speed = joystick.getRawAxis(3)*0.6;
     
     if (Constants.GEAR == 1) {
-      m_subsystem.driveTheBot(joystick.getRawAxis(3)*-0.6, joystick.getRawAxis(3)*turn*0.65);
+      m_subsystem.driveTheBot(speed*-1.0, turn);
+      Constants.SPEED_AXIS = speed;
+      Constants.TURN_AXIS = turn;
     } else {
-      m_subsystem.driveTheBot(joystick.getRawAxis(3)*0.6, joystick.getRawAxis(3)*turn*0.65);
+      m_subsystem.driveTheBot(speed, turn);
+      Constants.SPEED_AXIS = speed;
+      Constants.TURN_AXIS = turn;
     }
     
   }

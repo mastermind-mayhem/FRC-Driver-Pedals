@@ -9,15 +9,20 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /** Add your docs here. */
 public class Dashboard extends SubsystemBase  {
-    @Override
+  @Override
   public void periodic() {
     // This method will be called once per scheduler run
     String gear;
+    Double speed = Constants.SPEED_AXIS;
+    Double turn = Constants.TURN_AXIS;
     if (Constants.GEAR == 1){
       gear = "Reverse";
     } else {
       gear = "Forward";
     }
     SmartDashboard.putString("Gear", gear);
+    SmartDashboard.putNumber("Turn", turn);
+    SmartDashboard.putNumber("Speed", speed);
+
   }
 }
