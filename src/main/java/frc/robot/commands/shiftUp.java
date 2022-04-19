@@ -20,7 +20,13 @@ public class shiftUp extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    Constants.GEAR = 2;
+    int currgear = Constants.GEAR;
+    if (currgear >= 4) {
+      currgear = 4;
+    } else {
+      currgear = Constants.GEAR + 1;
+    }
+    Constants.GEAR = currgear;
   }
 
   // Called once the command ends or is interrupted.

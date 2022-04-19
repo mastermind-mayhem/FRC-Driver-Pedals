@@ -40,19 +40,22 @@ public class TeleopCmd extends CommandBase {
       turns = joystick.getRawAxis(0);
     }
     double turn = joystick.getRawAxis(3)*turns*0.65;
-    
-    double speed = joystick.getRawAxis(3)*0.6;
+    // double turn = turns*0.65;
+    double speed = joystick.getRawAxis(3);
+    // double speed = 1.0;
     
     if (Constants.GEAR == 1) {
-      m_subsystem.driveTheBot(speed*-1.0, turn);
-      Constants.SPEED_AXIS = speed;
-      Constants.TURN_AXIS = turn;
+      speed = speed * -0.4;
+    } else if (Constants.GEAR == 2)  {
+      speed = speed * 0.3;
+    } else if (Constants.GEAR == 3){
+      speed = speed * 0.6;
     } else {
-      m_subsystem.driveTheBot(speed, turn);
-      Constants.SPEED_AXIS = speed;
-      Constants.TURN_AXIS = turn;
-    }
-    
+      speed = speed * 0.9;
+    } 
+    m_subsystem.driveTheBot(speed, turn);
+    Constants.SPEED_AXIS = speed;
+    Constants.TURN_AXIS = turn;
   }
 
   // Called once the command ends or is interrupted.
