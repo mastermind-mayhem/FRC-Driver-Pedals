@@ -13,7 +13,7 @@ import frc.robot.Constants;
 public class TeleopCmd extends CommandBase {
   // @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
   private final DrivetrainSubsystem m_subsystem;
-  private final Joystick joystick = new Joystick(0);
+  private final Joystick joystick = new Joystick(2);
 
   /**
    * Creates a new ExampleCommand.
