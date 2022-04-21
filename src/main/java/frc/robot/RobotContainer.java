@@ -28,7 +28,7 @@ public class RobotContainer {
 
   private final TeleopCmd m_drive = new TeleopCmd(m_driveshaft);
 
-  private final Joystick driver = new Joystick(0);
+  private final Joystick driver = new Joystick(2);
 
   private final shiftUp up = new shiftUp();
   private final shiftDown down = new shiftDown();
