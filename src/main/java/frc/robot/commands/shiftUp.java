@@ -21,8 +21,8 @@ public class shiftUp extends CommandBase {
   @Override
   public void execute() {
     int currgear = Constants.GEAR;
-    if (currgear >= 4) {
-      currgear = 4;
+    if (currgear >= 3) {
+      currgear = 3;
     } else {
       currgear = Constants.GEAR + 1;
     }

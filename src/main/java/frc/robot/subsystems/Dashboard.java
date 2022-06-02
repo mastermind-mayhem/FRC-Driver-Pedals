@@ -17,10 +17,13 @@ public class Dashboard extends SubsystemBase  {
     Double turn = Constants.TURN_AXIS;
     if (Constants.GEAR == 1){
       gear = "Reverse";
+    } else if(Constants.GEAR == 2) {
+      gear = "Gear 1";
     } else {
-      gear = "Forward";
+      gear = "Gear 2";
     }
     SmartDashboard.putString("Gear", gear);
+    SmartDashboard.putNumber("constants", Constants.GEAR);
     SmartDashboard.putNumber("Turn", turn);
     SmartDashboard.putNumber("Speed", speed);
 

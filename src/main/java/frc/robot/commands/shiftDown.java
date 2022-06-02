@@ -24,7 +24,7 @@ public class shiftDown extends CommandBase {
     if (currgear <= 1) {
       currgear = 1;
     } else {
-      currgear = Constants.GEAR - 1;
+      currgear = 1;
     }
     Constants.GEAR = currgear;
   }

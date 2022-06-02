@@ -47,7 +47,7 @@ public class TeleopCmd extends CommandBase {
     if (Constants.GEAR == 1) {
       speed = speed * -0.4;
     } else if (Constants.GEAR == 2)  {
-      speed = speed * 0.3;
+      speed = speed * 0.4;
     } else if (Constants.GEAR == 3){
       speed = speed * 0.6;
     } else {
